@@ -1,4 +1,5 @@
-﻿1,r2qkb1r/ppp2ppp/2n1pn2/3p3b/2PP1BPP/4PP2/PP6/RN1QKBNR b KQkq g3 0 7,move out can attack his knight later
+﻿Index,FEN,Comment
+1,r2qkb1r/ppp2ppp/2n1pn2/3p3b/2PP1BPP/4PP2/PP6/RN1QKBNR b KQkq g3 0 7,move out can attack his knight later
 2,r5k1/ppp1q1p1/2n1pr1p/3p1p1P/1bPP1B1Q/P3P3/1P1N4/2KR1BNR b - - 0 15,"attack his pawn, then knight and queen is checkmate M3"
 3,r5k1/2pq2p1/p3p2Q/n2p1p1P/3P4/P3P3/1P1KB3/6R1 b - - 0 26,knight base
 4,1r4k1/2p1q1p1/4p2Q/pB1p1p1P/P2P4/4P3/1P6/2n1K1R1 b - - 5 31,landed his bishop on the pawn you can push pawn
