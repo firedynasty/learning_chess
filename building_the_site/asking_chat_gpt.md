@@ -37,3 +37,15 @@ if (largerString.includes(smallerString)) {
 In this example, the includes() method is called on the largerString variable and the smallerString variable is passed as the argument. The method returns true if smallerString is found within largerString, and false if it is not.
 
 
+```javascript
+var largerString = "r2qkb1r/ppp2ppp/2n1pn2/3p3b/2PP1BPP/4PP2/PP6/RN1QKBNR b KQkq g3 0 7"
+var smallerString = "r2qkb1r"
+
+if (largerString.includes(smallerString)) {
+  console.log("The smaller string is a part of the larger string.");
+} else {
+  console.log("The smaller string is not a part of the larger string.");
+}
+
+```
+

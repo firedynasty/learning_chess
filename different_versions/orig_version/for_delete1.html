@@ -1,0 +1,112 @@
+<html lang="en">
+<head>
+<title>Chess</title>
+ <link rel="stylesheet" href="https://assets.codepen.io/1075762/chessboard-1.0.0.min.css">
+  <script src="https://assets.codepen.io/1075762/chessboard-1.0.0.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> 
+
+</head>
+
+  <body>
+     <header class="header">
+       
+       <p></p><div class="select">
+            <i class="material-icons">palette</i>
+            <select class="select__input" id="selTheme">
+                <option value="white">White</option>
+                <option value="light" selected>Green</option>
+                <option value="dark">Dark</option>
+            </select>
+        </div>
+    </header>
+    <div class="main">
+          <div class="container">
+      <h1><abbr title="Forsyth-Edwards Notation">FEN</abbr> to HTML(edit arr)</h1>
+      <p class="lead"> <a href="http://fulldecent.blogspot.com">copied from William Entriken(fulldecent.blogspot.com)</a></p>
+      <hr>
+      <div class="input-group input-group-lg">
+        <input class="form-control" onKeyUp="fentohtml()" id="fen" value="rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNK w KQkq - 0 1">
+
+      </div>
+    <input type="text" id="text" style="color:black"/>
+<input type="button" id="btn_3" value="Submit(or reset with 0)" /> 
+      <hr>
+      <div class="row">
+        <div class="col-lg-6">       
+          <h2 id="front">Front</h2> 
+          <div id="out"> 
+          </div>
+            <h2 id="back">
+    <!-- term lives here   -->Back
+  </h2><br>
+  <hr><br><br>
+        </div>
+        <div class="col-lg-6">       
+          <h2>Output HTML (view source for CSS)</h2>
+          <pre id="outhtml"></pre>
+        </div>
+      </div>
+  <table id="my-table">
+</table>
+  <table id="my-table_2">
+</table>
+         
+    <p><button type="button" id="gotoTable">Table,</button> <button type="button" id="gotoImages">Images,</button> <button type="button" id="gotoLinks">Links,</button> 
+               <button type="button" id="reveal_img_toc">Reveal TOCi,</button> <button type="button" id="clear_TOC">Clear, </button> <button type="button" id="something">  Reload!</button>
+      <div id="rates">
+  <input type="radio" id="r1" name="gotoImages" value="Fixed Rate" ><input type="radio" id="r2" name="gotoLinks" value="Variable Rate"><input type="radio" id="r3" name="Links" value="Variable Rate"><input type="radio" id="r4" name="Keyword" value="Variable Rate" checked="checked">
+</div></p>
+<div class="container">
+
+  <!-- btn3 is the submit button --> 
+  
+  <div class="inner"><table id="my-table">
+</table>
+    </div>
+  <div class="inner_3"></div>
+
+</div>
+  <table>
+  <tr>
+ <td>Kindle
+   <select id="Row4Column1">
+    <option value disable selected>Other</option>     
+    <option value="A">1. Data_behavior</option>
+    <option value="B"></option>
+   </select>
+    </td>
+   </tr>
+    </table>
+    <br>
+  <br>
+    <div 
+  <div class="inner2"></div>
+
+       <!-- image slider from Joseph Odunsi -->    <div class="slide-container">
+      <div class="slide fade">
+    <!--https://images.unsplash.com/photo-1590595978583-3967cf17d2ea?ixlib=rb-1.2.1&q=85&fm=jpg&crop=entropy&cs=srgb&ixid=eyJhcHBfaWQiOjE0NTg5fQ -->
+      <img src='https://www.dropbox.com/s/o9t615mvdxng6lv/nf_thesearch.jpg?raw=1' alt=''>
+      </div>
+      <div class="slide fade">
+        <img src='https://images.unsplash.com/photo-1588807308097-fb6e5047df8c?ixlib=rb-1.2.1&q=85&fm=jpg&crop=entropy&cs=srgb&ixid=eyJhcHBfaWQiOjE0NTg5fQ' alt=''>
+      </div>
+      <div class="slide fade">
+        <img src='https://images.unsplash.com/photo-1589808710416-24cf7ac026f2?ixlib=rb-1.2.1&q=85&fm=jpg&crop=entropy&cs=srgb&ixid=eyJhcHBfaWQiOjE0NTg5fQ' alt=''>
+      </div>
+      <div class="slide fade">
+        <img src='https://images.unsplash.com/photo-1588796388882-a4d533c47e5e?ixlib=rb-1.2.1&q=85&fm=jpg&crop=entropy&cs=srgb&ixid=eyJhcHBfaWQiOjE0NTg5fQ' alt=''>
+      </div>
+
+
+    </div>
+    <div>             <a href="#" class="prev" title="Previous">&#10094</a>
+      <a href="#" class="next" title="Next">&#10095</a>
+
+</div>
+    
+</body>
+</html>
+
+
+
+

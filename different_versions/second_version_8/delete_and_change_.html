@@ -1,0 +1,134 @@
+   <td> <input type="text" id="text_chess" /> ( enter Fen here.. <span id="replace_number"></span> )</select>
+        </td>
+      </tr>
+        <tr>
+          <td>Which?<select id="WhiteOrBlack">
+              <option value="white">As White</option>
+              <option value="black">As Black</option>
+            </select><u id="flip_board_2">>>flip board?</u></t>
+        </tr>
+        <tr>
+        <tr>
+        <tr>
+          <td>Move # ::<select id="moveChoice">
+              <option value disable selected>__</option>
+              <option value="1a">1a</option>
+              <option value="4a">4a</option>
+              <option value="8a">8a</option>
+              <option value="12a">12a</option>
+              <option value="16a">16a</option>
+              <option value="20a">20a</option>
+              <option value="24a">24a</option>
+            </select><button onclick="restart_fen_0()"><u> Restart at move 1</u></button>
+          </td>
+
+          function restart_fen_0() {
+  counter_ = 0;
+  var table2 = document.getElementsByTagName("table")[3];
+  var second_var = table2.rows[counter_].cells[0].textContent;
+  text_val = second_var;
+  text_val_split = text_val.split(" ")[0];
+  var config = {
+    //Spanish Opening
+    position: text_val_split,
+    pieceTheme:
+      "https://nothingtoseeheredude.netlify.app/img/chesspieces/wikipedia/{piece}.png",
+    draggable: true,
+    dropOffBoard: "snapback",
+    onDrop: onDrop
+  };
+  board = Chessboard("myBoard", config);
+  val1 = $("#WhiteOrBlack").val();
+  if (val1 === "white") {
+    board.orientation("white");
+  }
+  if (val1 === "black") {
+    board.orientation("black");
+  }
+  document.getElementById("spacecounter").innerHTML =
+    spacecounterlist[counter_];
+}
+
+
+
+
+          <td></td>
+        </tr>
+        <tr>
+          <td><span id="moveboard_number"></span>..<span id="spacecounter"></span>..(<span id="spacecounter_2"><span> ) <span id="currentmove"></span><span id="moveboard_recent"></span></td>
+        </tr><br>
+
+        <tr>
+          <td><span id="fen_position_on_board">..</span></td>
+        </tr>
+        <tr>
+          <td><input type="text" id="move_board" /> 
+
+// hello world
+$('#move_board').keypress(function (e) {
+  if (e.which == 13) {
+    text_val = $( "#move_board" ).val();
+    if (text_val.length > 0) {
+      if (text_val.includes(",")) {
+        console.log('contains ,')
+        text_val_split = text_val.split(",");
+        short_array_of_moves = text_val_split;
+        short_array_of_moves = short_array_of_moves.filter(Boolean);
+    } else {
+        if (text_val.includes("/")) {
+          var config = {
+      //Spanish Opening
+            position: text_val,
+            pieceTheme:
+        "https://nothingtoseeheredude.netlify.app/img/chesspieces/wikipedia/{piece}.png",
+            draggable: true,
+            dropOffBoard: "snapback",
+            onDrop: onDrop
+            };
+          board = Chessboard("myBoard", config);
+          another_counter = empty_fen.indexOf(text_val)
+          console.log('another_counter :' + another_counter)
+          document.getElementById("entered_fen_span").innerHTML = text_val
+          numberandcountervalue = empty_fen.indexOf(text_val)
+
+          second_index_value = number_and_counter[numberandcountervalue] 
+
+
+          document.getElementById("spacenumbercounter").innerHTML = second_index_value + '..(' + numberandcountervalue
+
+        } else {
+          console.log('does not contain /')
+        }
+        console.log('does not contain ,')
+        console.log('wish to get the move position')
+    }
+    } else {
+      console.log('it is not')
+      move_board_counter_ = -1
+    }
+  
+        document.getElementById("move_board").value = ''
+    }
+});
+
+
+
+
+
+
+            (:<input type="button" id="enter_moves" value="enter_moves" /><span id="movenumber"></span>) <input type="button" id="confirm_fen" value="confirm_fen" /> </td>
+        </tr>
+        <tr>
+          <td><input type="button" id="get_selection_button" value="Get_highlighted_FEN" /> .. <input type="button" id="get_link_button" value="Get_link" /> .. <input type="button" id="goto_highlight_link_button" value="Goto_highlighted_link" /> </td>
+        </tr>
+        <tr>
+          <td><input type="button" id="reset_to" value="Reset To:" /><span id="entered_fen_span"></span>..<span id="spacenumbercounter"></span></td>
+        </tr>
+        <tr>
+          <td><input type="button" id="down_button" value="down_button" /> ... <input type="button" id="left_button" value="left_button" /> ... <input type="button" id="right_button" value="right_button" /> </td>
+        </tr>
+      </table><br><br>
+      <div>
+        <div id="myBoard"></div><textarea id="myTextArea" rows="2" cols="44"></textarea><br>
+      </div>
+    </div>

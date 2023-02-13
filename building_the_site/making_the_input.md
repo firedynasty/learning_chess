@@ -182,7 +182,7 @@ $('#text').keypress(function (e) {
     	//there were some issues 
     	//cells[1] refers to : the second column
     	//textContent gives an error when your cells return as undefined
-    
+
       function fentohtml_3() {
         html = for_entry_to_fentohtml_3
           .trim()
@@ -202,3 +202,61 @@ $('#text').keypress(function (e) {
 
 
 ```
+
+How to append text to an element?
+
+```javascript
+var p1 = document.getElementById("adding_info");
+p1.innerHTML += " This is some additional text.";
+```
+
+
+How does this work? 
+
+```javascript
+
+var regExp = /[a-zA-Z]/g;
+
+
+if(regExp.test('hel23lo')){
+	console.log('a letter')
+} else {
+	console.log('not a letter')
+}
+
+//a letter
+
+if(regExp.test('1')){
+	console.log('a letter')
+} else {
+	console.log('not a letter')
+}
+
+//a letter
+
+
+```
+
+And for the FEN I can add: //2qkb1r/ppp2ppp/2n1pn2/3p3b/2PP1BPP/4PP2/PP6/RN1QKBNR b KQkq g3 0 7 black-to-move
+
+so it can actually be a test where it reveals the next position.
+
+
+
+```javascript
+function fentohtml_2() {
+        html = '2qkb1r1/ppp2ppp/2n1pn2/3p3b/2PP1BPP/4PP2/PP6/RN1QKBNR b KQkq g3 0 7 black-to-move'
+          .trim()
+          .replace(/\s+.*/,"")
+          .replace(/\d+/g, n => " ".repeat(n))
+          .replace(/./g, char => "<td>" + (pieces[char] || char))
+          .replace(/^|<td>\//g,"\n  <tr>");
+        html = "<table class=\"chess\">" + html + "\n</table>";
+        document.getElementById("out").innerHTML = html;
+        document.getElementById("outhtml").innerHTML = html.replace(/</g,"&lt;").replace(/>/g,"&gt;");
+    }
+    fentohtml_2()
+
+```
+ 
+
