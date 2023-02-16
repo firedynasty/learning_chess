@@ -481,11 +481,22 @@ $('#text_chess').keypress(function (e) {
       }});
 
 
+
 var element = document.getElementById("back"); //grab the element
 element.onclick = function() { //asign a function
   var table1 = document.getElementsByTagName('table')[2];
-  var second_var_3 = table1.rows[counter_].cells[2].textContent
-  document.getElementById('back').innerHTML = second_var_3
+  //grab the innerHTML of ID front
+  var first_var = parseInt(document.getElementById('front').innerHTML)
+  //write an if else first_var is NaN
+  if (isNaN(first_var)) {
+    console.log('not a number')
+  } else {
+    var second_var_3 = table1.rows[first_var].cells[2].textContent
+    document.getElementById('back').innerHTML = second_var_3
+  
+  }
+
+
 }
 
 var choice_by_ten_catch = document.getElementById("choice_by_ten");
@@ -549,3 +560,165 @@ element.onclick = function () {
   console.log("flip board");
   board.flip();
 };
+
+
+
+
+  //create a function whenever click on id load_puzzle
+  var element = document.getElementById("load_puzzles"); //grab the element
+  element.onclick = function() { 
+  
+      //set the id my-table innerhtml to ''
+      document.getElementById("my-table").innerHTML = '';
+  
+      fetch('https://raw.githubusercontent.com/firedynasty/learning_chess/main/chess_puzzles.csv')
+      .then(response => response.text())
+      .then(data => {
+        // Use Papa Parse to parse the CSV data
+        const csv = Papa.parse(data);
+        // Get the rows from the parsed data
+        const rows = csv.data;
+    
+        // Get the table by its ID
+        const table = document.getElementById("my-table");
+        table.style.borderCollapse = 'collapse';
+    
+        // Loop through the rows of the CSV data
+        for (const row of rows) {
+          // Create a new table row
+          const tr = document.createElement('tr');
+    
+          // Loop through the cells of the row
+          for (const cell of row) {
+            // Create a new table cell
+            const td = document.createElement('td');
+            td.innerText = cell;
+            td.style.border = '1px dotted black';
+            tr.appendChild(td);
+          }
+    
+          // Append the row to the table
+          table.appendChild(tr);
+        }
+      })
+      .catch(error => console.error(error));
+  
+  }
+  
+  //recreate the previous function with id load_positions
+  var element = document.getElementById("load_positions"); //
+  element.onclick = function() { //
+      //set the id my-table innerhtml to ''
+      document.getElementById("my-table").innerHTML = '';
+      
+      fetch('https://raw.githubusercontent.com/firedynasty/learning_chess/main/chess_positions.csv')
+      .then(response => response.text())
+      .then(data => {
+        // Use Papa Parse to parse the CSV data
+        const csv = Papa.parse(data);
+        // Get the rows from the parsed data
+        const rows = csv.data;
+    
+        // Get the table by its ID
+        const table = document.getElementById("my-table");
+        table.style.borderCollapse = 'collapse';
+    
+        // Loop through the rows of the CSV data
+        for (const row of rows) {
+          // Create a new table row
+          const tr = document.createElement('tr');
+    
+          // Loop through the cells of the row
+          for (const cell of row) {
+            // Create a new table cell
+            const td = document.createElement('td');
+            td.innerText = cell;
+            td.style.border = '1px dotted black';
+            tr.appendChild(td);
+          }
+    
+          // Append the row to the table
+          table.appendChild(tr);
+        }
+      })
+      .catch(error => console.error(error));
+  
+  }
+  
+
+    //recreate the previous function with id front
+var element = document.getElementById("front"); //
+element.onclick = function() { //
+      
+      //set that to a integer
+      var first_var = parseInt(document.getElementById('front').innerHTML)
+      
+      // create if else first_var is a NaN
+      if(isNaN(first_var)) {
+        //set the innerHTML of ID front to 1
+        document.getElementById('front').innerHTML = 1
+        var first_var = 1
+        var table1 = document.getElementsByTagName('table')[2];
+        console.log('first_var')
+        console.log(first_var)
+        var second_var = table1.rows[1].cells[1].textContent
+        navigator.clipboard.writeText(table1.rows[1].cells[3].textContent)
+        .then(() => {
+        console.log('Text copied to clipboard');
+        })
+       .catch(err => {
+        console.error('Error copying text: ', err);
+        });
+        var config = {
+          //Spanish Opening
+              position: second_var,
+              pieceTheme:
+                "https://nothingtoseeheredude.netlify.app/img/chesspieces/wikipedia/{piece}.png",
+              draggable: true,
+              dropOffBoard: "snapback",
+              onDrop: onDrop
+            };
+        board = Chessboard("myBoard", config);
+        document.getElementById('fenposition_1').innerHTML = second_var
+      document.getElementById('back').innerHTML = 'click to reveal'
+      document.getElementById('text_chess').value = ''
+      document.getElementById("text_chess").focus();
+
+      }else {
+        //increment first_var by 1
+        first_var = first_var + 1
+        //set the innerHTML of ID front to first_var
+        document.getElementById('front').innerHTML = first_var
+        var table1 = document.getElementsByTagName('table')[2];
+        console.log('first_var')
+        console.log(first_var)
+        var second_var = table1.rows[first_var].cells[1].textContent
+        navigator.clipboard.writeText(table1.rows[first_var].cells[3].textContent)
+        .then(() => {
+        console.log('Text copied to clipboard');
+        })
+       .catch(err => {
+        console.error('Error copying text: ', err);
+      });
+        var config = {
+        //Spanish Opening
+            position: second_var,
+            pieceTheme:
+              "https://nothingtoseeheredude.netlify.app/img/chesspieces/wikipedia/{piece}.png",
+            draggable: true,
+            dropOffBoard: "snapback",
+            onDrop: onDrop
+          };
+          board = Chessboard("myBoard", config);
+    
+    
+          document.getElementById('fenposition_1').innerHTML = second_var
+          document.getElementById('back').innerHTML = 'click to reveal'
+          document.getElementById('text_chess').value = ''
+          document.getElementById("text_chess").focus();
+          document.getElementById('front').innerHTML = first_var
+      }
+
+
+    }
+
