@@ -1,28 +1,13 @@
-# learning_chess
+Purpose: 
 
-After I make the positions, I would like to be able to search not only by single-digit numbers (by the index of the spreadsheet), but to be able to enter the first couple Chess Fen to load the position (so I do not need to type the entire FEN in)
+**chess_python_to_render_images.ipynb :** 
 
+to create images from a pgn file
 
-https://docs.google.com/spreadsheets/d/1gOMtLb2LoLEXEq_MkgG1pUBcMxBZhJww9CjV86ka3-w/edit#gid=0
+then, convert from pdf to png
 
-https://docs.google.com/document/d/1_jeB_ym6CUn6tdJZXemGKTbAkftE-xG7MYpIxD0yKE4/edit
-
-
-Final page: 
-
-https://cdpn.io/pen/debug/ExEaGMa/d1359d7d9ccf568da684e074acdd6044
-
-
-Basic chess: 
-https://codepen.io/Groundedelectron/pen/RwYGEWX
-
-forked: 
-
-https://cdpn.io/pen/debug/KKxgbmv
+Using Bluehost to upload using file manager and the public_html folder.
 
 
 
-added puzzles link.
-board.position("r2qkb1r/ppp2ppp/2n1pn2/3p3b/2PP1BPP/4PP2/PP6/RN1QKBNR")
-
-05-16-2023: adjusting
+taking FEN positions and converting to .png

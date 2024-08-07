@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Links</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            line-height: 1.6;
+        }
+        h1 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+        a {
+            text-decoration: none;
+            color: #0000EE;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Links</h1>
+    <ul id="linkList">
+        <!-- JavaScript will populate this list -->
+    </ul>
+
+    <script>
+        // Define the map with image links
+        const imageDictionary = new Map([
+            ["01-black", "games/01-black/notes.html"],
+            ["01-white", "games/01-white/notes.html"],
+            ["02-kings_pawn_white", "games/02-kings_pawn_white/notes.html"],
+            ["openings-01-kings_pawn", "openings/01-kings_pawn_4_center/notes.html"],
+            ["puzzle-01-queen", "puzzles/01-queen/notes.html"]
+        ]);
+
+        // Convert map to an array and sort it by the key
+        const sortedEntries = Array.from(imageDictionary.entries()).sort((a, b) => a[0].localeCompare(b[0]));
+
+        // Reference to the unordered list
+        const linkList = document.getElementById('linkList');
+
+        // Iterate through sorted entries and create list items
+        sortedEntries.forEach(([key, url]) => {
+            const listItem = document.createElement('li');
+            const link = document.createElement('a');
+            link.href = url;
+            link.target = '_blank';
+            link.textContent = url.replace(/^https?:\/\/(www\.)?/, '').replace(/\/$/, '');
+            listItem.appendChild(link);
+            linkList.appendChild(listItem);
+        });
+    </script>
+</body>
+</html>
