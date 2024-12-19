@@ -37,12 +37,15 @@ ipython
 
 	2.	Import the check_moves function:
 
+```python
 from lichess_moves import check_moves
-
+```
 
 	3.	Start the move checking process:
 
+```python
 check_moves()
+```
 
 Example
 
