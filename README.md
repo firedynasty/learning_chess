@@ -20,8 +20,10 @@ Step 1: Edit lichess_moves.py
 Update the following variables with your game details:
 
 # Initialize these variables with your values
+```python
 GAME_ID = "cKggVpTC"  # Replace with your game ID
 AUTH_TOKEN = "Insert_your_token_here"  # Replace with your actual token
+```
 
 Step 2: Install Required Dependencies
 
