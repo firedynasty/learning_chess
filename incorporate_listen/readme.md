@@ -70,4 +70,9 @@ A program that monitors audio through a virtual audio cable and announces chess 
    - `get_last_move()`: Fetches latest move from Lichess
    - `convert_move_to_speech()`: Formats chess notation for speech
 
-This script would be useful in a setup where someone is playing chess online and wants moves announced automatically after they occur, perhaps in a scenario where they're recording gameplay or streaming.
+This script would be useful in a setup where someone is playing chess online and wants moves announced automatically after they occur.
+
+Note: to use VB-Cable and headphones, can use Audio Midi Setup to combine, create multi-output device. 
+
+
+
