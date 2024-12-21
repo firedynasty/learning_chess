@@ -57,3 +57,17 @@ For a Lichess game with URL `https://lichess.org/cKggVpTC`:
 ## License
 
 This project is licensed under the MIT License. See the LICENSE file for details.
+
+
+
+## Addtional notes
+
+https://www.reddit.com/r/lichess/comments/qk9kpe/lichess_api_for_playing_a_game/
+
+https://www.reddit.com/r/chess/comments/t9v2zr/speech_on_lichess/
+
+Get your token by: 
+
+https://www.youtube.com/watch?v=OnCQ3J6ZKL4 
+
+"Extract Extract Chess Data from Lichess API with Python"
