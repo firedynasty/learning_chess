@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Basic Chess</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<h3><a href="https://codepen.io/Groundedelectron/pen/KKxgbmv?fbclid=IwAR0L0WkE6UgSedrm5GC3CxbcZh-kr6Qts5UMuvVqROeykqCoe7Othb_Cl-w" target="_blank">Go to Pen</a></h3>
+<button id="getInnerHTML">Get innerHTML </button>&nbsp;&nbsp;<button id="goToHighlight">Go to Highlight</button>&nbsp;&nbsp;<button id="convertTextAreaInnerHTML">Convert TextArea (innerHTML)</button>&nbsp;&nbsp;<button id="convertTextAreaColumns">Convert TextArea (columns)</button>&nbsp;&nbsp;<button id="convertTextAreaTest">Convert TextArea (for quiz)</button>&nbsp;&nbsp;
+<p>convert textarea button: copy and paste cells from multiple rows (one column), convert texarea button (columns): Copy and paste two rows, last one is to generate a row after (there will be X)</p>
+<p>highlightCell(9) will highlight row #9</p>
+<br>
+<textarea id="myTextArea" rows="8" cols="72" ></textarea>&nbsp;&nbsp;<span id='moveReveal'>1.</span>&nbsp;&nbsp;/ Row #: <span id="bracketReveal"></span><br><br>  
+<button id="clearTextArea">Clear Textarea </button>&nbsp;&nbsp;<button id="delimitFens">Delimit with ;</button>&nbsp;&nbsp;<button id="removeNewlines">Remove \n</button>&nbsp;&nbsp;<button id="loadChessPgn">Load Chess PGN</button>&nbsp;&nbsp;<button id="loadFenPositions">Load FEN Positions</button>&nbsp;&nbsp;<button id="addText">Add Text</button>&nbsp;&nbsp;    <input type="text" id="myInput" placeholder="Enter your command here" onkeypress="handleKeyPress(event)">
+    <button onclick="replaceText()">Replace with ,</button>
+<div class="center-container">
+        <p class="center-text"><span id="fenRevealPrevious">Previous FEN</span></p>
+    </div><br>
+<div class="center-container">
+        <p class="center-text"><span id="fenReveal" style="border: 2px solid #007acc; padding: 4px;">FEN</span></p>
+    </div><br>
+<div class="center-container">
+        <p class="center-text"><span id="notesReveal">Notes Reveal</span></p>
+    </div><br>
+
+<div id="myBoard" class="board"></div><br>
+
+<button id="bracketLeft">Bracket Left</button>&nbsp;&nbsp;
+<button id="bracketRight">Bracket Right</button>&nbsp;&nbsp;
+<button id="leftArrow">Left Arrow</button>&nbsp;&nbsp;
+<button id="rightArrow">Right Arrow</button>&nbsp;&nbsp;
+<br><br>
+<div class="tally-container">
+  <div class="tally-column" id="whitePiecesTally"></div>
+  <div class="tally-column" id="blackPiecesTally"></div>
+  <div class="tally-column" id="differenceTally"></div>
+</div>
+
+<base href="./" />
+<h3 class="board">
+
+</h3>
+<h4 id="back" class="hide-element">Back</h4>
+<p><select id="table_drop">
+    <option value="">table_drop</option>
+    <option value="0" selected>0+</option>
+    <option value="10">10+</option>
+    <option value="20">20+</option>
+    <option value="30">30+</option>
+  </select> &nbsp;&nbsp;&nbsp;<select id="retrieveData">
+    <option value="" disabled>Added Rows</option>
+    <option value="0" selected>0+</option>
+    <option value="10">10+</option>
+  </select>&nbsp;&nbsp;&nbsp;<span id="flip_board"><u>Flip Board</u></span>&nbsp;&nbsp;&nbsp;<button id="exportTableCsv">Export Table CSV</button>&nbsp;&nbsp;&nbsp;<select id="folderTextData">
+    <option value="" disabled selected>Folder Text Data</option>
+  </select></p>
+<br>
+<table id="my-table"></table>
+<textarea id="myTextArea2" rows="8" cols="72" ></textarea>&nbsp;&nbsp;<br>
+<button id="convertTextAreaSemiColons">Convert TextArea (semi-colons)</button>&nbsp;&nbsp;
+<button id="convertTextAreaFrColumns">Convert TextArea (with for columns)</button>&nbsp;&nbsp;<button id="clearTextArea2">Clear Text Area</button> <br>
+ The cell will have fen positions separated by a semi-colon.
+<table id="my-table2"></table>
+
+</div>
+<!-- partial -->
+  <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
+<script src='https://chessboardjs.com/js/chessboard.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/PapaParse/4.3.5/papaparse.min.js'></script>
+<script src='https://cdn.rawgit.com/lhartikk/simple-chess-ai/master/lib/js/chess.js'></script>
+<script src="./template_data_chess.js"></script>
+<script  src="./script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,105 @@
+# How to Export Table as CSV in flashcardsIndex.html
+
+## Overview
+The flashcardsIndex.html application has a built-in CSV export feature that allows users to download their table data as a CSV file.
+
+## Export Button Location
+The export button is labeled "Export .CSV" and is located in the main button group on line 253:
+```html
+<button class="import-button" id="exportButton">Export .CSV</button>
+```
+
+## How the Export Function Works
+
+### 1. Event Listener Setup
+The export button is connected to the `handleExport()` function via an event listener (line 770):
+```javascript
+document.getElementById('exportButton').addEventListener('click', () => this.handleExport());
+```
+
+### 2. Export Function Implementation (lines 1101-1121)
+The `handleExport()` function follows these steps:
+
+#### Step 1: Data Validation
+```javascript
+if (this.tableData.length === 0) {
+    alert('No data to export!');
+    return;
+}
+```
+- Checks if there's any data in the table
+- Shows an alert if no data exists
+
+#### Step 2: CSV Content Generation
+```javascript
+const csvContent = this.tableData.map(row => row.join(',')).join('\n');
+```
+- Converts the internal `tableData` array into CSV format
+- Each row array is joined with commas (`,`)
+- All rows are joined with newlines (`\n`)
+
+#### Step 3: Blob Creation
+```javascript
+const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+```
+- Creates a Blob object containing the CSV data
+- Sets the MIME type to `text/csv` with UTF-8 encoding
+
+#### Step 4: Download Implementation
+```javascript
+const link = document.createElement('a');
+
+if (navigator.msSaveBlob) {
+    // Internet Explorer support
+    navigator.msSaveBlob(blob, 'table_export.csv');
+} else {
+    // Modern browsers
+    link.href = URL.createObjectURL(blob);
+    link.download = 'table_export.csv';
+    link.style.display = 'none';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+}
+```
+
+**For Internet Explorer:**
+- Uses the legacy `navigator.msSaveBlob()` method
+
+**For Modern Browsers:**
+- Creates a temporary download link element
+- Sets the blob URL as the href
+- Sets the filename to 'table_export.csv'
+- Hides the link element
+- Adds it to the DOM, clicks it programmatically, then removes it
+
+## Data Format
+The exported CSV will contain:
+- All rows from the current table data
+- First column: Status indicator ('1' for active, '2' for inactive)
+- Second column: Main content (e.g., vocabulary word)
+- Third column: Translation or additional information
+- Additional columns if present
+
+## File Output
+- **Filename:** `table_export.csv`
+- **Encoding:** UTF-8
+- **Format:** Standard CSV with comma separators
+- **Download location:** Browser's default download folder
+
+## Usage Instructions
+1. Load or create data in the table
+2. Click the "Export .CSV" button
+3. The file will automatically download as `table_export.csv`
+4. Open the file in Excel, Google Sheets, or any CSV-compatible application
+
+## Error Handling
+- If no data exists in the table, an alert message appears: "No data to export!"
+- The function safely handles both modern browsers and Internet Explorer
+- No additional error checking is performed on the CSV content generation
+
+## Technical Notes
+- The export function operates on the `this.tableData` array
+- It preserves the exact structure and content of the internal data
+- The CSV format uses standard comma separation without quote escaping
+- The implementation is synchronous and doesn't require server communication
