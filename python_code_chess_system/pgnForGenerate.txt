@@ -1,0 +1,7 @@
+1. e4 e5 2. Nf3 Nc6 3. Bb5 Bc5 4. d4 $2 exd4 $6 5. O-O d6 $6 6. Nbd2 a6 7. Ba4 $6 b5 8. Bb3 Qe7 $6 9. c4 $2 b4 $9 10. a3 $6 Nf6 11. Re1 Ne5 12. axb4 Bxb4 13. Nxd4 Bd7 $6 14. Ba4 $6 O-O 15. N4f3 $6 (15. Nf5 Qd8 16. Bxd7 Qxd7 17. Nf3 $6 (17. Re3) (17. Qc2)) 15... Nd3 16. Qb3 $2 Nxe1 $1 17. Bxd7 $6 (17. Qxb4) 17... Bxd2 18. Bc6 Nxf3+ 19. Qxf3 Bxc1 20. Rxc1 Rab8 21. b3 Rb6 22. Bd5 c6 0-1
+so what you need is that you need to make sure that you don't put the bishop behind the pawn
+###
+###
+1. e4 e5 2. Nf3 Nc6 3. Bc4 Nf6 4. d3 d5 5. exd5 Nxd5 6. O-O Na5 $2 7. Bxd5 Qxd5 8. Nc3 Qd6 9. Re1 Nc6 10. Bf4 f6 11. Nb5 $6 Qd8 $2 12. c3 $9 (12. Bxe5 fxe5 13. Nxe5 Ne7 14. Qh5+ g6 15. Qf3 $1 Bf5 16. Qxb7 $1 Rc8 17. Nc6 Qd7 18. Nbxa7 Be6 19. Ne5 Qd6 20. Nc4 Qd7) 12... a6 $6 13. Na3 $2 (13. Bxe5 $6) (13. Nbd4 Be7 14. Nxc6 $1 bxc6 15. Bg3 O-O 16. d4 Be6 17. Qe2 a5 18. Bxe5 $3 fxe5 19. Qxe5 Qd7 $2 20. Qxe7 Qxe7 21. Rxe7 Bxf3 22. gxf3 Rac8 $6 23. Rae1 Rxf3 24. Re8+ Rf8 25. Rxc8 Rxc8 26. Re7 Kf8 27. Rd7 Rb8 28. b3 $1 Rc8 29. Kg2) 13... Bxa3 14. bxa3 O-O 15. Qb3+ $2 (15. Bg3) 15... Kh8 16. Be3 Qxd3 $1 17. Rad1 Qg6 18. c4 Bh3 $4 19. g3 $9 (19. Nh4) 19... Bg4 20. Qxb7 $2 Bxf3 $1 21. Rd7 $6 (21. Bc5 Qg4 22. Bxf8 $6 Qh3 $3 23. Bxg7+ Kxg7 24. Rd7+ Qxd7 25. Qb3 Nd4) 21... Qg4 (21... Qg4 22. Bc5 $2 Qh3 $1) (21... Qg4 22. Rf1 $2) (21... Qg4 22. Rd3 $2) 0-1
+https://www.dropbox.com/scl/fi/0b8xpxuzk68lcvr9hujfg/chess-0923.mp3?rlkey=dvlo5e8o32bgx6moiuep20kij&st=vtg3vmv6&raw=1
+@could_had_taken_down_the_center

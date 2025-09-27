@@ -1,0 +1,177 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2865
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fnil\fcharset0 Menlo-Regular;\f1\fnil\fcharset0 Menlo-Bold;\f2\fnil\fcharset0 AppleColorEmoji;
+\f3\fnil\fcharset0 Menlo-Italic;}
+{\colortbl;\red255\green255\blue255;\red0\green0\blue0;\red153\green153\blue153;\red47\green180\blue29;
+\red64\green11\blue217;\red180\green36\blue25;}
+{\*\expandedcolortbl;;\csgray\c0;\csgenericrgb\c60000\c60000\c60000;\cssrgb\c20241\c73898\c14950;
+\cssrgb\c32309\c18666\c88229;\cssrgb\c76411\c21697\c12527;}
+\margl1440\margr1440\vieww12920\viewh17960\viewkind0
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f0\fs36 \cf2 \CocoaLigature0 \
+  
+\f1\b Complete Chess Study Workflow\
+\
+\
+board_orientation.txt white or black will print that
+\f0\b0 \
+\
+  
+\f2 \cf3 \uc0\u55357 \u56513 
+\f0  
+\f1\b File Structure Overview
+\f0\b0 \cf2 \
+\
+  pythonPrint/\
+  \uc0\u9500 \u9472 \u9472  chess
+\f3\i _booklet_
+\f0\i0 generator.py      # Main position generator\
+  \uc0\u9500 \u9472 \u9472  generate
+\f3\i _move_
+\f0\i0 text
+\f3\i _images.py    # Move text with symbols (?, !, etc.)
+\f0\i0 \
+  
+\f3\i \uc0\u9500 \u9472 \u9472  generate_
+\f0\i0 text.py               # Custom text annotations\
+  \uc0\u9500 \u9472 \u9472  generate
+\f3\i _text_
+\f0\i0 standalone.py    # Batch text from file\
+  \uc0\u9500 \u9472 \u9472  generate
+\f3\i _from_
+\f0\i0 fenVariations.py # FEN variation positions\
+  \uc0\u9500 \u9472 \u9472  format
+\f3\i _pgn.py                 # PGN formatter (utility)
+\f0\i0 \
+  
+\f3\i \uc0\u9500 \u9472 \u9472  create_
+\f0\i0 chess
+\f3\i _booklet.sh       # PDF booklet creator
+\f0\i0 \
+  
+\f3\i \uc0\u9500 \u9472 \u9472  pgnForGenerate.txt            # Main PGN input
+\f0\i0 \
+  
+\f3\i \uc0\u9500 \u9472 \u9472  textForGenerate.txt           # Batch text input
+\f0\i0 \
+  
+\f3\i \uc0\u9500 \u9472 \u9472  fenvariations.txt             # FEN positions
+\f0\i0 \
+  
+\f3\i \uc0\u9492 \u9472 \u9472  readme.md                     # Documentation
+\f0\i0 \
+\
+  
+\f2 \uc0\u55357 \u56580 
+\f1\b  Main Workflow
+\f0\b0 \
+\
+  
+\f1\b Step 1: Prepare Your Content
+\f0\b0 \
+\
+  \cf4 # Add your PGN game to pgnForGenerate.txt\cf2 \
+  \cf4 # (Only content before ### ### is processed)\cf2 \
+\
+  
+\f1\b Step 2: Generate Core Images
+\f0\b0 \
+\
+  \cf4 # Generate position images for every move (image01.pdf \uc0\u8594  image44.pdf)\cf2 \
+  python chess_booklet_generator.py\
+\
+  \cf4 # Generate move text images with chess symbols (image02a.png, \cf2 \
+  \cf4 image04a.png, etc.)\cf2 \
+  python generate_move_text_images.py\
+\
+  \cf4 # Convert position PDFs to PNGs\cf2 \
+  \cf5 for\cf2  pdf \cf5 in\cf2  *.pdf; \cf5 do\cf2  magick \cf6 "$pdf"\cf2  \cf6 "$\{pdf%.pdf\}.png"\cf2 ; \cf5 done\cf2 \
+\
+  
+\f1\b Step 3: Add Custom Content (Optional)
+\f0\b0 \
+\
+  \cf4 # Add single custom annotation\cf2 \
+  python generate_text.py \cf6 "image01b"\cf2  \cf6 "should not put pawn ahead of bishop"\cf2 \
+\
+  \cf4 # Add batch text annotations (reads textForGenerate.txt)\cf2 \
+  python generate_text_standalone.py\
+\
+  \cf4 # Add position variations from FEN (reads fenvariations.txt)\cf2 \
+  python generate_from_fenVariations.py \cf6 "image15"\cf2   \cf4 # \uc0\u8594  image15b.png, \cf2 \
+  \cf4 image15c.png, etc.\cf2 \
+\
+  
+\f1\b Step 4: Create Final Booklet
+\f0\b0 \
+\
+  \cf4 # Combine all images into single PDF (1 image per page)\cf2 \
+  ./create_chess_booklet.sh\
+\
+  \cf4 # Print in Mac Preview: Portrait + 2 pages per sheet\cf2 \
+\
+  
+\f2 \uc0\u55357 \u57056 \u65039 
+\f1\b  Where format_pgn.py Fits
+\f0\b0 \
+\
+  
+\f1\b \cf5 format_pgn.py\cf2  is a UTILITY tool
+\f0\b0  for:\
+  - 
+\f1\b Reformatting PGN
+\f0\b0  from compact to line-by-line format\
+  - 
+\f1\b Understanding move structure
+\f0\b0  before processing\
+  - 
+\f1\b Debugging PGN issues
+\f0\b0  if needed\
+\
+  
+\f1\b Usage:
+\f0\b0 \
+  python format_pgn.py  \cf4 # Shows formatted moves from pgnForGenerate.txt\cf2 \
+\
+  
+\f1\b Note:
+\f0\b0  You don't need \cf5 format_pgn.py\cf2  in the main workflow - it's just a\
+  helper for viewing/debugging PGN structure.\
+\
+  
+\f2 \uc0\u55357 \u56523 
+\f1\b  Final Image Sequence
+\f0\b0 \
+\
+  After running the workflow, you'll have perfectly ordered files:\
+  image01.png     (1. e4)\
+  image02.png     (1...e5)\
+  image02a.png    ("1. e4 e5")\
+  image03.png     (2. Nf3)\
+  image04.png     (2...Nc6)\
+  image04a.png    ("2. Nf3 Nc6")\
+  image15b.png    (variation 1)\
+  image15c.png    (variation 2)\
+  image22z.png    (custom note)\
+  ...\
+\
+  
+\f2 \uc0\u55356 \u57263 
+\f1\b  Quick Start Commands
+\f0\b0 \
+\
+  
+\f1\b Complete generation:
+\f0\b0 \
+  python chess_booklet_generator.py && python generate_move_text_images.py\
+  && \cf5 for\cf2  pdf \cf5 in\cf2  *.pdf; \cf5 do\cf2  magick \cf6 "$pdf"\cf2  \cf6 "$\{pdf%.pdf\}.png"\cf2 ; \cf5 done\cf2  &&\
+  ./create_chess_booklet.sh\
+\
+  
+\f1\b Result:
+\f0\b0  Professional chess study booklet ready for Mac Preview printing!\
+  
+\f2 \uc0\u55357 \u56534 \u9823 \u65039 
+\f0 \
+\
+}

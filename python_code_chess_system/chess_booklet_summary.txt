@@ -1,0 +1,55 @@
+Chess Booklet Generation Summary
+========================================
+
+Input file: pgnForGenerate.txt
+Move interval: Every 1 moves
+Total games processed: 1
+Total positions generated: 44
+Total note pages: 1
+
+Generated files:
+  ./generated_images_for_booklet/image01.pdf - Move 1
+  ./generated_images_for_booklet/image02.pdf - Move 2
+  ./generated_images_for_booklet/image03.pdf - Move 3
+  ./generated_images_for_booklet/image04.pdf - Move 4
+  ./generated_images_for_booklet/image05.pdf - Move 5
+  ./generated_images_for_booklet/image06.pdf - Move 6
+  ./generated_images_for_booklet/image07.pdf - Move 7
+  ./generated_images_for_booklet/image08.pdf - Move 8
+  ./generated_images_for_booklet/image09.pdf - Move 9
+  ./generated_images_for_booklet/image10.pdf - Move 10
+  ./generated_images_for_booklet/image11.pdf - Move 11
+  ./generated_images_for_booklet/image12.pdf - Move 12
+  ./generated_images_for_booklet/image13.pdf - Move 13
+  ./generated_images_for_booklet/image14.pdf - Move 14
+  ./generated_images_for_booklet/image15.pdf - Move 15
+  ./generated_images_for_booklet/image16.pdf - Move 16
+  ./generated_images_for_booklet/image17.pdf - Move 17
+  ./generated_images_for_booklet/image18.pdf - Move 18
+  ./generated_images_for_booklet/image19.pdf - Move 19
+  ./generated_images_for_booklet/image20.pdf - Move 20
+  ./generated_images_for_booklet/image21.pdf - Move 21
+  ./generated_images_for_booklet/image22.pdf - Move 22
+  ./generated_images_for_booklet/image23.pdf - Move 23
+  ./generated_images_for_booklet/image24.pdf - Move 24
+  ./generated_images_for_booklet/image25.pdf - Move 25
+  ./generated_images_for_booklet/image26.pdf - Move 26
+  ./generated_images_for_booklet/image27.pdf - Move 27
+  ./generated_images_for_booklet/image28.pdf - Move 28
+  ./generated_images_for_booklet/image29.pdf - Move 29
+  ./generated_images_for_booklet/image30.pdf - Move 30
+  ./generated_images_for_booklet/image31.pdf - Move 31
+  ./generated_images_for_booklet/image32.pdf - Move 32
+  ./generated_images_for_booklet/image33.pdf - Move 33
+  ./generated_images_for_booklet/image34.pdf - Move 34
+  ./generated_images_for_booklet/image35.pdf - Move 35
+  ./generated_images_for_booklet/image36.pdf - Move 36
+  ./generated_images_for_booklet/image37.pdf - Move 37
+  ./generated_images_for_booklet/image38.pdf - Move 38
+  ./generated_images_for_booklet/image39.pdf - Move 39
+  ./generated_images_for_booklet/image40.pdf - Move 40
+  ./generated_images_for_booklet/image41.pdf - Move 41
+  ./generated_images_for_booklet/image42.pdf - Move 42
+  ./generated_images_for_booklet/image43.pdf - Move 43
+  ./generated_images_for_booklet/image44.pdf - Move 44
+  ./generated_images_for_booklet/image45.png - Notes
